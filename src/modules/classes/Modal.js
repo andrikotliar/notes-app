@@ -5,7 +5,7 @@ export class Modal {
     this.visibleClass = visibleClass;
   }
 
-  openModal(mode) {
+  openModal() {
     this.modal.classList.add(this.visibleClass);
 
     const firstInput = this.modal.querySelector('input');
@@ -16,17 +16,17 @@ export class Modal {
       this.closeModal();
     });
 
-    this.setSaveButtonID(mode);
     this.focusTrap();
   }
 
-  setSaveButtonID(mode) {
-    const saveButton = this.modal.querySelector('.save-note');
-    if(mode === 'update') {
-      saveButton.id = 'update-note';
-    } else {
-      saveButton.id = 'save-note';
-    }
+  setSaveButtonAttr(attr, value) {
+    const button = this.modal.querySelector('.save-note');
+    button.setAttribute(attr, value);
+  }
+
+  removeSaveButtonAttr(attr) {
+    const button = this.modal.querySelector('.save-note');
+    button.removeAttribute(attr);
   }
 
   clearInputs() {
@@ -57,5 +57,6 @@ export class Modal {
   closeModal() {
     document.body.style.overflow = '';
     this.modal.classList.remove(this.visibleClass);
+    this.removeSaveButtonAttr('data-id');
   }
 }
