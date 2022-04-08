@@ -4,7 +4,10 @@ import renderTableContentDates from "./renderTableContentDates";
 const renderTableCells = (tableStructure, tableRow, note, icons) => {
   for(let item of tableStructure) {
     const td = document.createElement('td');
-    td.classList.add(item.className);
+
+    if(item.className) {
+      td.classList.add(item.className);
+    }
 
     if(item.type == 'dinamicIcon') {
       td.innerHTML = renderTableCellIcon(icons, note.category);
