@@ -43,6 +43,7 @@ body {
 
 .notes__body tr {
   background-color: #e8eaf5;
+  vertical-align: top;
 }
 
 .notes__body td textarea {
@@ -54,7 +55,7 @@ body {
   border-radius: 3px;
 }
 
-.note__icon {
+.note__category-icon svg {
   width: 40px;
   height: 40px;
 }
