@@ -1,7 +1,7 @@
 import renderTableCellIcon from "./renderTableCellIcon";
-import rednderTableContentDates from "./renderTableContentDates";
+import renderTableContentDates from "./renderTableContentDates";
 
-const generateTableCells = (tableStructure, tableRow, note, icons) => {
+const renderTableCells = (tableStructure, tableRow, note, icons) => {
   for(let item of tableStructure) {
     const td = document.createElement('td');
     td.classList.add(item.className);
@@ -15,7 +15,7 @@ const generateTableCells = (tableStructure, tableRow, note, icons) => {
     };
 
     if(item.type == 'dinamicDates') {
-      td.textContent = rednderTableContentDates(note.content);
+      td.textContent = renderTableContentDates(note.content);
     }
 
     if(item.type == 'container') {
@@ -34,4 +34,4 @@ const generateTableCells = (tableStructure, tableRow, note, icons) => {
   }
 }
 
-export default generateTableCells;
+export default renderTableCells;

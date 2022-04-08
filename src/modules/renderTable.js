@@ -1,8 +1,8 @@
-import generateTableCells from './table/generateTableCells';
+import renderTableCells from './table/renderTableCells';
 import { tableStructure } from './data/tableStructure';
 import { categories } from './data/categories';
 
-const generateTable = (tableBodyId, notes, noteClassName) => {
+const renderTable = (tableBodyId, notes, noteClassName) => {
   const tableBody = document.querySelector(tableBodyId);
 
   tableBody.textContent = '';
@@ -11,10 +11,10 @@ const generateTable = (tableBodyId, notes, noteClassName) => {
     const tr = document.createElement('tr');
     tr.classList.add(noteClassName);
 
-    generateTableCells(tableStructure, tr, note, categories);
+    renderTableCells(tableStructure, tr, note, categories);
 
     tableBody.prepend(tr);
   }
 }
 
-export default generateTable;
+export default renderTable;
