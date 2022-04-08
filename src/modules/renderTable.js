@@ -11,7 +11,13 @@ const renderTable = (tableBodyId, notes, noteClassName) => {
     const tr = document.createElement('tr');
     tr.classList.add(noteClassName);
 
-    renderTableCells(tableStructure, tr, note, categories);
+    if(!note.active) {
+      tr.classList.add('is-archived');
+    }
+
+    if(note.active || note.displayed) {
+      renderTableCells(tableStructure, tr, note, categories);
+    }
 
     tableBody.prepend(tr);
   }
