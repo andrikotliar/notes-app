@@ -6,12 +6,20 @@ const generateNewNote = (titleId, contentId, categoriesClass) => {
   const contentInput = document.querySelector(contentId);
   const categoriesList = document.querySelectorAll(categoriesClass);
 
+  const title = titleInput.value === '' ?
+    'New note without title' :
+    titleInput.value;
+
+  const content = contentInput.value === '' ?
+    'No content' :
+    contentInput.value;
+
   const newNote = {
     id: null,
-    title: titleInput.value,
+    title,
     created: getCurrentDate(),
     category: getCategory(categoriesList),
-    content: contentInput.value,
+    content,
     active: true
   }
 
