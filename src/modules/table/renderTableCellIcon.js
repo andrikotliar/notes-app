@@ -1,6 +1,6 @@
 const renderTableCellIcon = (iconsList, category) => {
   const currentCategory = iconsList.find(
-    item => item.category === category
+    item => item.title === category
   );
 
   return currentCategory.icon;
