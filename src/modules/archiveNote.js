@@ -6,15 +6,14 @@ const archiveNote = (buttonClass, notesList) => {
     const clickedBtn = event.target.closest(buttonClass);
     if(clickedBtn) {
       const noteId = clickedBtn.dataset.id;
-      const list = [...notesList];
-      const archivedNote = list.find(note => note.id === parseInt(noteId));
+      const archivedNote = notesList.find(note => note.id === parseInt(noteId));
 
       archivedNote.active ?
         archivedNote.active = false :
         archivedNote.active = true;
 
-      renderTable('#notesTableBody', list, 'note');
-      renderStatistic('#statisticTableBody', 'statistic__item', list);
+      renderTable('#notesTableBody', notesList, 'note');
+      renderStatistic('#statisticTableBody', 'statistic__item', notesList);
     }
   });
 }
