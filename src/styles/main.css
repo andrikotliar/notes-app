@@ -1,0 +1,170 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.notes {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.notes tr {
+  border-bottom: 10px solid #fff;
+}
+
+.notes td {
+  padding: 10px;
+}
+
+.notes__header {
+  color: #fff;
+  font-weight: bold;
+  background-color: #9b9999;
+  border-radius: 5px;
+}
+
+.notes__header-icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.notes__body tr {
+  background-color: #e8eaf5;
+}
+
+.notes__body td textarea {
+  font-family: inherit;
+  width: 100%;
+  height: 150px;
+  resize: none;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.note__icon {
+  width: 40px;
+  height: 40px;
+}
+
+.note__title {
+  font-weight: bold;
+}
+
+.note__content {
+  width: 400px;
+}
+
+.note__button {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.create-note {
+  padding: 3px 10px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal--open {
+  display: block;
+}
+
+.modal__overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.note-popup {
+  position: relative;
+  background-color: #fff;
+  padding: 50px 30px 30px 30px;
+  border-radius: 3px;
+  max-width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.note-popup h3 {
+  color: #777;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.note-popup__title {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.note-popup__categories {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.note-popup__category {
+  background-color: #f2f2f2;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.note-popup__content {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  resize: none;
+  width: 400px;
+  height: 250px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.note-popup__save {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.note-popup__close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}

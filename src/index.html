@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/favicon.png">
+  <title>Notes App</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="wrapper">
+    <table class="notes">
+      <thead class="notes__header">
+        <tr>
+          <td></td>
+          <td>Name</td>
+          <td>Created</td>
+          <td>Category</td>
+          <td>Content</td>
+          <td>Dates</td>
+          <td></td>
+          <td>
+            <div class="notes__header-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m41.09 10.45-2.77-3.36A3.043 3.043 0 0 0 36 6H12c-.93 0-1.76.43-2.31 1.09l-2.77 3.36C6.34 11.15 6 12.03 6 13v25c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V13c0-.97-.34-1.85-.91-2.55zM24 35 13 24h7v-4h8v4h7L24 35zM10.25 10l1.63-2h24l1.87 2h-27.5z"/><path d="M0 0h48v48H0z" fill="none"/></svg>
+            </div>
+          </td>
+          <td>
+            <div class="notes__header-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="M12 38c0 2.21 1.79 4 4 4h16c2.21 0 4-1.79 4-4V14H12v24zM38 8h-7l-2-2H19l-2 2h-7v4h28V8z"/><path d="M0 0h48v48H0z" fill="none"/></svg>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody class="notes__body" id="tableBody"></tbody>
+    </table>
+    <button class="create-note">
+      Create Note
+    </button>
+  </div>
+  <div class="modal" id="modal">
+    <div class="modal__overlay">
+      <div class="note-popup">
+        <input type="text" placeholder="Write note title..." class="note-popup__title">
+        <h3>Choose a category</h3>
+        <div class="note-popup__categories">
+          <label class="note-popup__category">
+            <input type="radio" value="Task" name="category" class="note-category-input">
+            <span>Task</span>
+          </label>
+          <label class="note-popup__category">
+            <input type="radio" value="Idea" name="category" class="note-category-input">
+            <span>Idea</span>
+          </label>
+          </label>
+          <label class="note-popup__category">
+            <input type="radio" value="Random Thought" name="category" class="note-category-input">
+            <span>Random Thought</span>
+          </label>
+        </div>
+        <textarea class="note-popup__content" placeholder="Write note text..."></textarea>
+        <button id="save-note" class="note-popup__save">
+          Save note
+        </button>
+        <button title="Close popup" class="note-popup__close" id="closeModal">
+          ✖
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
