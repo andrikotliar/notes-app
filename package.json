@@ -1,0 +1,12 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "Training app for creating notes",
+  "scripts": {
+    "start": "parcel src/index.html --port 8080 --open"
+  },
+  "author": "Andrii Kotliar",
+  "devDependencies": {
+    "parcel": "^2.4.1"
+  }
+}
