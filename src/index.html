@@ -10,8 +10,8 @@
 </head>
 <body>
   <div class="wrapper">
-    <table class="notes">
-      <thead class="notes__header">
+    <table class="table notes">
+      <thead class="table__header notes__header">
         <tr>
           <td></td>
           <td>Name</td>
@@ -21,22 +21,33 @@
           <td>Dates</td>
           <td></td>
           <td>
-            <div class="notes__header-icon">
+            <div class="table__header-icon notes__header-icon" id="showAllArchived">
               <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m41.09 10.45-2.77-3.36A3.043 3.043 0 0 0 36 6H12c-.93 0-1.76.43-2.31 1.09l-2.77 3.36C6.34 11.15 6 12.03 6 13v25c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V13c0-.97-.34-1.85-.91-2.55zM24 35 13 24h7v-4h8v4h7L24 35zM10.25 10l1.63-2h24l1.87 2h-27.5z"/><path d="M0 0h48v48H0z" fill="none"/></svg>
             </div>
           </td>
           <td>
-            <div class="notes__header-icon">
+            <div class="table__header-icon notes__header-icon">
               <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="M12 38c0 2.21 1.79 4 4 4h16c2.21 0 4-1.79 4-4V14H12v24zM38 8h-7l-2-2H19l-2 2h-7v4h28V8z"/><path d="M0 0h48v48H0z" fill="none"/></svg>
             </div>
           </td>
         </tr>
       </thead>
-      <tbody class="notes__body" id="tableBody"></tbody>
+      <tbody class="table__body notes__body" id="notesTableBody"></tbody>
     </table>
     <button class="create-note">
       Create Note
     </button>
+    <table class="table statistic">
+      <thead class="table__header statistic__header">
+        <tr>
+          <td></td>
+          <td>Note Category</td>
+          <td>Active</td>
+          <td>Archived</td>
+        </tr>
+      </thead>
+      <tbody class="table__body statistic__body" id="statisticTableBody"></tbody>
+    </table>
   </div>
   <div class="modal" id="modal">
     <div class="modal__overlay">
@@ -59,7 +70,7 @@
           </label>
         </div>
         <textarea class="note-popup__content" placeholder="Write note text..."></textarea>
-        <button id="save-note" class="note-popup__save">
+        <button id="save-note" class="note-popup__save save-note">
           Save note
         </button>
         <button title="Close popup" class="note-popup__close" id="closeModal">
