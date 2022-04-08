@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "Training app for creating notes",
   "scripts": {
-    "start": "parcel src/index.html --port 8080 --open"
+    "start": "parcel src/index.html --port 8080 --open",
+    "build": "parcel build src/index.html"
   },
   "author": "Andrii Kotliar",
   "devDependencies": {
+    "htmlnano": "^2.0.2",
     "parcel": "^2.4.1"
   }
 }
