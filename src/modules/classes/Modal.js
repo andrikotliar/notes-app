@@ -34,10 +34,7 @@ export class Modal {
       'input[type="text"], textarea'
     );
 
-    const radios = this.modal.querySelectorAll('input[type="radio"]');
-
     textInputs.forEach(textInput => textInput.value = '');
-    radios.forEach(radioInput => radioInput.checked = false);
   }
 
   focusTrap() {
