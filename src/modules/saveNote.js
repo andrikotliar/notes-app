@@ -12,20 +12,23 @@ const saveNote = (saveButtonId, notes, modal) => {
   ];
 
   saveButton.addEventListener('click', () => {
-    let updatedNotes = notes;
     if(saveButton.hasAttribute('data-id')) {
       const id = saveButton.dataset.id;
       saveEditedNote(notes, id, ...classList);
       modal.removeSaveButtonAttr('data-id');
     } else {
-      updatedNotes = updateNotesList(notes, classList);
+      updateNotesList(notes, classList);
     }
 
-    renderTable('#notesTableBody', updatedNotes, 'note');
-    renderStatistic('#statisticTableBody', 'statistic__item', updatedNotes);
+    try {
+      renderTable('#notesTableBody', notes, 'note');
+      renderStatistic('#statisticTableBody', 'statistic__item', notes);
 
-    modal.closeModal();
-    modal.clearInputs();
+      modal.closeModal();
+      modal.clearInputs();
+    } catch {
+      alert('Something went wrong! Plese, reload the page and try again!');
+    }
   });
 }
 
