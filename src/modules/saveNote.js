@@ -20,15 +20,11 @@ const saveNote = (saveButtonId, notes, modal) => {
       updateNotesList(notes, classList);
     }
 
-    try {
-      renderTable('#notesTableBody', notes, 'note');
-      renderStatistic('#statisticTableBody', 'statistic__item', notes);
+    renderTable('#notesTableBody', notes, 'note');
+    renderStatistic('#statisticTableBody', 'statistic__item', notes);
 
-      modal.closeModal();
-      modal.clearInputs();
-    } catch {
-      alert('Something went wrong! Plese, reload the page and try again!');
-    }
+    modal.closeModal();
+    modal.clearInputs();
   });
 }
 
